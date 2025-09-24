@@ -1,0 +1,31 @@
+package by.vadarod.homework.service;
+
+import by.vadarod.homework.entity.Client;
+import by.vadarod.homework.entity.Status;
+import by.vadarod.homework.repository.ClientRepository;
+
+import java.util.List;
+
+public class ClientService {
+    public static List<Client> getAllClientsService()
+    {
+        return ClientRepository.getAllClients();
+    }
+
+    public static void addClientService(Client client)
+    {
+        ClientRepository.addClient(client);
+    }
+
+    public static void dellClientService(long id)
+    {
+        ClientRepository.dellClient(id);
+    }
+
+    public static void changeStatusService(long id, Status newStatus)
+    {
+        ClientRepository.changeStatus(id, newStatus);
+    }
+
+
+}
