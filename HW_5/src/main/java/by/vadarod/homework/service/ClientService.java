@@ -27,5 +27,12 @@ public class ClientService {
         ClientRepository.changeStatus(id, newStatus);
     }
 
+    public Client getIdClientService(long id)
+    {
+        ClientRepository clientRepository = new ClientRepository();
+        return clientRepository.getIdClient(id);
+    }
+
+
 
 }

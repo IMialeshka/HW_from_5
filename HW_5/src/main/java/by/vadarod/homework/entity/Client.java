@@ -10,7 +10,8 @@ import java.util.Date;
 @Data
 public class Client {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE )
+    @SequenceGenerator(name = "sequenceClient", schema = "schema_hw", sequenceName = "sequence_client", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceClient")
     private long id;
 
     private String name;

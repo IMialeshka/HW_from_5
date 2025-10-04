@@ -1,9 +1,12 @@
 package by.vadarod.homework.repository;
 
 import by.vadarod.homework.config.HibernateConnection;
+import by.vadarod.homework.config.HibernateJavaConfig;
 import by.vadarod.homework.entity.Client;
 import by.vadarod.homework.entity.Status;
 import jakarta.persistence.EntityManager;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 import java.util.List;
 
@@ -24,6 +27,15 @@ public class ClientRepository {
         List clients = em.createQuery("from Client").getResultList();
         em.close();
         return clients;
+    }
+
+    public Client  getIdClient(long id)
+    {
+        SessionFactory sessionFactory = HibernateJavaConfig.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        Client client = session.get(Client.class, id);
+        session.close();
+        return client;
     }
 
     public static void dellClient(long id)
