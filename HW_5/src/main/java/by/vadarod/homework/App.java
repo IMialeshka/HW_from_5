@@ -138,7 +138,7 @@ public class App
         Premises premises3 = new Premises();
         premises3.setName("Aerobics room");
         premises3.setIdNumber((short) 3);
-        premises3.setMaxPeople((short) 30);
+        premises3.setMaxPeople((short) 10);
         premises3.setStatus(PremisesStatus.REPAIR);
         premises3.setPrice(135.56);
         premisesService.addPremisesService(premises3);
@@ -146,7 +146,7 @@ public class App
         Premises premises4 = new Premises();
         premises4.setName("Yoga room");
         premises4.setIdNumber((short) 4);
-        premises4.setMaxPeople((short) 32);
+        premises4.setMaxPeople((short) 12);
         premises4.setStatus(PremisesStatus.ACTIVE);
         premises4.setPrice(156.56);
         premisesService.addPremisesService(premises4);
@@ -158,6 +158,40 @@ public class App
         System.out.println("================================ 6 ==========================================");
         Premises premisesUpp = premisesService.uppPricePremisesService(5L, 1111.12);
         System.out.println(premisesUpp.getId() + " " + premisesUpp.getName() + " " + premisesUpp.getIdNumber() + " " + premisesUpp.getPrice());
+
+        System.out.println("================================HW 7==========================================");
+        System.out.println("================================ 1 ==========================================");
+
+        Client client6 = new Client();
+        client6.setAge(72);
+        client6.setName("Igor");
+        client6.setSurname("Pupkin");
+        client6.setAmount(125.15);
+        client6.setPhone("+37544111156675");
+        client6.setLastVisitDate(new Date());
+        client6.setStatus(Status.PREMIUM);
+        client6.setAddress(new Address("Minsk", "Nezavisimosti", 1, "123456"));
+        ClientService.addClientService(client6);
+
+        List<Client> clientsAddress = ClientService.getAllClientsService();
+
+        for (Client clientAddress : clientsAddress) {
+            if (clientAddress.getAddress() != null) {
+                System.out.println(clientAddress.getName() + "  " + clientAddress.getSurname() + " " + clientAddress.getAddress());
+            }
+        }
+        System.out.println("================================ 2 ==========================================");
+        List<PremisesMore> premisesMoreList = premisesService.getAllPremisesMoreService();
+
+        for (PremisesMore premises : premisesMoreList) {
+                System.out.println(premises.getPrice());
+        }
+        System.out.println("================================ 3 ==========================================");
+        List<ClientPremium> clientPremiumList = clientService.getAllClientPremiumService();
+
+        for (ClientPremium clientPremium : clientPremiumList) {
+            System.out.println(clientPremium);
+        }
 
 
     }

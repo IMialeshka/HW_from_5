@@ -30,4 +30,7 @@ public class Client {
 
     private double amount;
 
+    @Embedded
+    private Address address;
+
 }

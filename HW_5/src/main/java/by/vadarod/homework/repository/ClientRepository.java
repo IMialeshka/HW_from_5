@@ -3,6 +3,8 @@ package by.vadarod.homework.repository;
 import by.vadarod.homework.config.HibernateConnection;
 import by.vadarod.homework.config.HibernateJavaConfig;
 import by.vadarod.homework.entity.Client;
+import by.vadarod.homework.entity.ClientPremium;
+import by.vadarod.homework.entity.PremisesMore;
 import by.vadarod.homework.entity.Status;
 import jakarta.persistence.EntityManager;
 import org.hibernate.Session;
@@ -57,4 +59,15 @@ public class ClientRepository {
         em.getTransaction().commit();
         em.close();
     }
+
+    public List<ClientPremium>  getAllClientPremium()
+    {
+        SessionFactory sessionFactory = HibernateJavaConfig.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        List<ClientPremium>  premiumList = session.createQuery("from ClientPremium").getResultList();
+        session.close();
+        return premiumList;
+    }
+
+
 }

@@ -1,6 +1,7 @@
 package by.vadarod.homework.service;
 
 import by.vadarod.homework.entity.Client;
+import by.vadarod.homework.entity.ClientPremium;
 import by.vadarod.homework.entity.Status;
 import by.vadarod.homework.repository.ClientRepository;
 
@@ -32,6 +33,13 @@ public class ClientService {
         ClientRepository clientRepository = new ClientRepository();
         return clientRepository.getIdClient(id);
     }
+
+    public List<ClientPremium>  getAllClientPremiumService()
+    {
+        ClientRepository clientRepository = new ClientRepository();
+        return clientRepository.getAllClientPremium();
+    }
+
 
 
 

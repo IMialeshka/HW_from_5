@@ -1,8 +1,11 @@
 package by.vadarod.homework.repository;
 
+import by.vadarod.homework.config.HibernateConnection;
 import by.vadarod.homework.config.HibernateJavaConfig;
 import by.vadarod.homework.entity.Client;
 import by.vadarod.homework.entity.Premises;
+import by.vadarod.homework.entity.PremisesMore;
+import jakarta.persistence.EntityManager;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -46,5 +49,14 @@ public class PremisesRepository {
         session.getTransaction().commit();
         session.close();
         return premises;
+    }
+
+    public static List<PremisesMore>  getAllPremisesMore()
+    {
+        SessionFactory sessionFactory = HibernateJavaConfig.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        List<PremisesMore>  premisesMoreList = session.createQuery("from PremisesMore").getResultList();
+        session.close();
+        return premisesMoreList;
     }
 }

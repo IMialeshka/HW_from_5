@@ -1,8 +1,6 @@
 package by.vadarod.homework.config;
 
-import by.vadarod.homework.entity.Client;
-import by.vadarod.homework.entity.Premises;
-import by.vadarod.homework.entity.Service;
+import by.vadarod.homework.entity.*;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -28,6 +26,8 @@ public class HibernateJavaConfig {
         config.addAnnotatedClass(Client.class);
         config.addAnnotatedClass(Service.class);
         config.addAnnotatedClass(Premises.class);
+        config.addAnnotatedClass(PremisesMore.class);
+        config.addAnnotatedClass(ClientPremium.class);
         serviceRegistry = new StandardServiceRegistryBuilder();
         serviceRegistry.applySettings(props);
     }
