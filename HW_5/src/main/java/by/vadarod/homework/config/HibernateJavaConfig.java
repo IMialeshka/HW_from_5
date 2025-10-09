@@ -18,7 +18,7 @@ public class HibernateJavaConfig {
         props.put("hibernate.connection.username", "postgres");
         props.put("hibernate.connection.password", "19850515");
         props.put("hibernate.show_sql", "true");
-        props.put("hibernate.hbm2ddl.auto", "update");
+        props.put("hibernate.hbm2ddl.auto", "create");
         props.put("hibernate.format_sql", "true");
         props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         props.put("hibernate.connection.driver_class", "org.postgresql.Driver");
@@ -27,7 +27,9 @@ public class HibernateJavaConfig {
         config.addAnnotatedClass(Service.class);
         config.addAnnotatedClass(Premises.class);
         config.addAnnotatedClass(PremisesMore.class);
-        config.addAnnotatedClass(ClientPremium.class);
+        //config.addAnnotatedClass(ClientPremium.class);
+        config.addAnnotatedClass(User.class);
+        config.addAnnotatedClass(Employee.class);
         serviceRegistry = new StandardServiceRegistryBuilder();
         serviceRegistry.applySettings(props);
     }

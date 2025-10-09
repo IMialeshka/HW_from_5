@@ -39,6 +39,13 @@ public class ClientService {
         ClientRepository clientRepository = new ClientRepository();
         return clientRepository.getAllClientPremium();
     }
+    public void addClientUserService(Client client)
+    {
+        ClientRepository clientRepository = new ClientRepository();
+        clientRepository.addClientUser(client);
+    }
+
+
 
 
 

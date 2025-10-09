@@ -69,5 +69,14 @@ public class ClientRepository {
         return premiumList;
     }
 
+    public void addClientUser(Client client) {
+        SessionFactory sessionFactory = HibernateJavaConfig.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        session.getTransaction().begin();
+        session.persist(client);
+        session.getTransaction().commit();
+        session.close();
+
+    }
 
 }
