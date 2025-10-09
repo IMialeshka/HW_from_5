@@ -210,7 +210,7 @@ public class App
         clientService.addClientUserService(client1);
 
         Client client2 = new Client();
-        client2.setYearOfBirth(1985);
+        client2.setYearOfBirth(1987);
         client2.setName("Ivan");
         client2.setSurname("Ivanov");
         client2.setAmount(111.15);
