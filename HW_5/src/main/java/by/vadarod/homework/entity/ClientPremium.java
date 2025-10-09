@@ -7,8 +7,8 @@ import org.hibernate.annotations.Where;
 
 import java.util.Date;
 
-@Entity
-@Table(schema = "schema_hw", name = "clients")
+//@Entity
+//@Table(schema = "schema_hw", name = "clients")
 @NoArgsConstructor
 @Getter
 @Setter

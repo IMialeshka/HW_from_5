@@ -3,6 +3,7 @@ package by.vadarod.homework;
 
 import by.vadarod.homework.entity.*;
 import by.vadarod.homework.service.ClientService;
+import by.vadarod.homework.service.EmployeeService;
 import by.vadarod.homework.service.PremisesService;
 import by.vadarod.homework.service.ServiceService;
 
@@ -14,7 +15,7 @@ public class App
 {
     public static void main( String[] args )
     {
-        Client client1 = new Client();
+       /* Client client1 = new Client();
         client1.setAge(18);
         client1.setName("Ivan");
         client1.setSurname("Ivanov");
@@ -191,7 +192,101 @@ public class App
 
         for (ClientPremium clientPremium : clientPremiumList) {
             System.out.println(clientPremium);
-        }
+        }*/
+
+
+        System.out.println("================================ HW 8 ==========================================");
+        System.out.println("================================ 1, 2 ==========================================");
+        ClientService clientService = new ClientService();
+        Client client1 = new Client();
+        client1.setYearOfBirth(1985);
+        client1.setName("Igor");
+        client1.setSurname("Pupkin");
+        client1.setAmount(125.15);
+        client1.setPhone("+37544111156675");
+        client1.setLastVisitDate(new Date());
+        client1.setStatus(Status.PREMIUM);
+        client1.setAddress(new Address("Minsk", "Nezavisimosti", 1, "123456"));
+        clientService.addClientUserService(client1);
+
+        Client client2 = new Client();
+        client2.setYearOfBirth(1985);
+        client2.setName("Ivan");
+        client2.setSurname("Ivanov");
+        client2.setAmount(111.15);
+        client2.setPhone("+37544144456675");
+        client2.setLastVisitDate(new Date());
+        client2.setStatus(Status.PREMIUM);
+        client2.setAddress(new Address("Minsk", "Nezavisimosti", 4, "123456"));
+        clientService.addClientUserService(client2);
+
+        Client client3 = new Client();
+        client3.setYearOfBirth(1985);
+        client3.setName("Ivan");
+        client3.setSurname("Smirnov");
+        client3.setAmount(111.15);
+        client3.setPhone("+37544666456675");
+        client3.setLastVisitDate(new Date());
+        client3.setStatus(Status.PREMIUM);
+        client3.setAddress(new Address("Vitebsk", "Nezavisimosti", 4, "123456"));
+        clientService.addClientUserService(client3);
+
+        Client client4 = new Client();
+        client4.setYearOfBirth(1985);
+        client4.setName("Elena");
+        client4.setSurname("Smirnova");
+        client4.setAmount(111.45);
+        client4.setPhone("+37116675");
+        client4.setLastVisitDate(new Date());
+        client4.setStatus(Status.PREMIUM);
+        client4.setAddress(new Address("Vitebsk", "Nezavisimosti", 4, "123456"));
+        clientService.addClientUserService(client4);
+
+        System.out.println("================================ 3 ==========================================");
+        EmployeeService employeeService = new EmployeeService();
+        Employee employee1 = new Employee();
+        employee1.setYearOfBirth(1985);
+        employee1.setName("Ina");
+        employee1.setSurname("Smirnova");
+        employee1.setPosition("Trener");
+        employee1.setSalary(1000.12);
+        employee1.setHiringDate(new Date());
+        employee1.setTerminationDate(new Date());
+        employee1.setAddress(new Address("Vitebsk", "Nezavisimosti", 4, "123456"));
+        employeeService.addEmployeeService(employee1);
+
+        Employee employee2 = new Employee();
+        employee2.setYearOfBirth(1996);
+        employee2.setName("Ina");
+        employee2.setSurname("Ltaria");
+        employee2.setPosition("Manager");
+        employee2.setSalary(1200);
+        employee2.setHiringDate(new Date());
+        employee2.setTerminationDate(new Date());
+        employee2.setAddress(new Address("Minsk", "Nezavisimosti", 12, "123456"));
+        employeeService.addEmployeeService(employee2);
+
+        Employee employee3 = new Employee();
+        employee3.setYearOfBirth(1987);
+        employee3.setName("Igor");
+        employee3.setSurname("Ltaria");
+        employee3.setPosition("Trener");
+        employee3.setSalary(1500);
+        employee3.setHiringDate(new Date());
+        employee3.setTerminationDate(new Date());
+        employee3.setAddress(new Address("Minsk", "Pobedi", 12, "123456"));
+        employeeService.addEmployeeService(employee3);
+
+        Employee employee4 = new Employee();
+        employee4.setYearOfBirth(1991);
+        employee4.setName("Ivan");
+        employee4.setSurname("Ivanov");
+        employee4.setPosition("Director");
+        employee4.setSalary(3560);
+        employee4.setHiringDate(new Date());
+        employee4.setTerminationDate(new Date());
+        employee4.setAddress(new Address("Minsk", "Masherova", 12, "123456"));
+        employeeService.addEmployeeService(employee4);
 
 
     }
