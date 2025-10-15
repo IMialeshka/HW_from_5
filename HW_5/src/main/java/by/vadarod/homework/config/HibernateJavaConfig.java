@@ -30,6 +30,8 @@ public class HibernateJavaConfig {
         //config.addAnnotatedClass(ClientPremium.class);
         config.addAnnotatedClass(User.class);
         config.addAnnotatedClass(Employee.class);
+        config.addAnnotatedClass(Visit.class);
+        config.addAnnotatedClass(SignUp.class);
         serviceRegistry = new StandardServiceRegistryBuilder();
         serviceRegistry.applySettings(props);
     }

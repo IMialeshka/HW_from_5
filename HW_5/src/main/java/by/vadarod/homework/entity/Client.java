@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(schema = "schema_hw", name = "clients")
@@ -22,5 +23,9 @@ public class Client extends User{
     private Status  status;
 
     private double amount;
+
+    @OneToMany(fetch = FetchType.EAGER)
+    @JoinColumn(name = "client_id")
+    private List<Visit> visits;
 
 }
