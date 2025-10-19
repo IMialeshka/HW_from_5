@@ -13,4 +13,16 @@ public class EmployeeService {
 
     }
 
+    public double findMaxSalary () {
+        return employeeRepository.findMaxSalary();
+    }
+
+    public double findMinSalary () {
+        return employeeRepository.findMinSalary();
+    }
+
+    public double findSalaryPeriod(int dayCount) {
+        return Math.round((employeeRepository.findSalarySumMonth()/30)*dayCount*100.00)/100.00;
+    }
+
 }

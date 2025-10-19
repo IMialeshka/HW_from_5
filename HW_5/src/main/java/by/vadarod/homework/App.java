@@ -410,5 +410,23 @@ public class App
         System.out.println("================================ 4 ==========================================");
 
         premisesService.dellPremisesService(premises4);
+
+        System.out.println("================================ HW 10 ==========================================");
+        System.out.println("================================ 1 ==========================================");
+        List<Client> clientsIgor = clientService.findClientByNameService("Igor");
+        for (Client client : clientsIgor) {
+            System.out.println(client.getSurname());
+        }
+        System.out.println("================================ 2 ==========================================");
+        System.out.println(employeeService.findMaxSalary());
+
+        System.out.println("================================ 3 ==========================================");
+        System.out.println(employeeService.findMinSalary());
+
+        System.out.println("================================ 4 ==========================================");
+        System.out.println(employeeService.findSalaryPeriod(113));
+
+        System.out.println("================================ 5 ==========================================");
+        System.out.println(premisesService.findCostForClientService());
     }
 }

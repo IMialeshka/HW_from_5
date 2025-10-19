@@ -6,7 +6,7 @@ import lombok.*;
 import java.util.Date;
 import java.util.List;
 
-@Entity
+@Entity (name = "ClientsEntity")
 @Table(schema = "schema_hw", name = "clients")
 @NoArgsConstructor
 @Getter
