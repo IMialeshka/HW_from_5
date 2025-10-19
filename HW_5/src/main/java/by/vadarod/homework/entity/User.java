@@ -3,6 +3,8 @@ package by.vadarod.homework.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "user", schema = "schema_hw")
 @NoArgsConstructor
@@ -26,4 +28,7 @@ public class User {
 
     @Embedded
     private Address address;
+
+    @OneToMany(mappedBy = "user", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<SignUp> signUpList;
 }

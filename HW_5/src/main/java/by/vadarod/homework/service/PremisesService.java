@@ -26,6 +26,12 @@ public class PremisesService {
         return premisesRepository.getAllPremisesMore();
     }
 
+    public void dellPremisesService(Premises premises)
+    {
+        premisesRepository.dellPremises(premises);
+    }
+
+
 
 
 
