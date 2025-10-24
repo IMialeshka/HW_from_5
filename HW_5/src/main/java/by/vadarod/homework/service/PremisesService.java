@@ -38,8 +38,14 @@ public class PremisesService {
 
     }
 
+    public Short findTotalCountVisitorsService() {
+        return premisesRepository.findTotalCountVisitors();
+    }
 
 
 
+    public List<Premises> findPremisesByAgeService(int yare) {
+        return premisesRepository.findPremisesByAge(yare);
+    }
 
 }

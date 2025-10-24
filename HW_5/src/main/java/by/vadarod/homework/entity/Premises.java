@@ -1,7 +1,7 @@
 package by.vadarod.homework.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
@@ -9,7 +9,9 @@ import java.util.List;
 
 @Entity
 @Table(schema = "schema_hw", name = "premises")
-@Data
+@NoArgsConstructor
+@Getter
+@Setter
 public class Premises {
     @Id
     @SequenceGenerator(name = "sequencePremises", schema = "schema_hw", sequenceName = "sequence_premises", allocationSize = 1)
@@ -31,4 +33,9 @@ public class Premises {
     @OneToMany(mappedBy = "premises", fetch = FetchType.EAGER, cascade =  CascadeType.REMOVE)
     @OnDelete(action = OnDeleteAction.CASCADE)
     private List<SignUp> signUpList;
+
+    @Override
+    public String toString() {
+        return this.getName() + " " + this.getIdNumber() + " " + this.getMaxPeople() + " " + this.getPrice();
+    }
 }

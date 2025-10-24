@@ -409,7 +409,7 @@ public class App
 
         System.out.println("================================ 4 ==========================================");
 
-        premisesService.dellPremisesService(premises4);
+       // premisesService.dellPremisesService(premises4);
 
         System.out.println("================================ HW 10 ==========================================");
         System.out.println("================================ 1 ==========================================");
@@ -428,5 +428,35 @@ public class App
 
         System.out.println("================================ 5 ==========================================");
         System.out.println(premisesService.findCostForClientService());
+
+        System.out.println("================================ HW 11 ==========================================");
+        System.out.println("================================ 1 ==========================================");
+
+        System.out.println(employeeService.findAllEmployeesService().size());
+
+        System.out.println("================================ 2 ==========================================");
+
+        Service service2 = new Service();
+        service2.setName("Joga");
+        service2.setPrice(100);
+        serviceService.addService(service2);
+
+        Service service3 = new Service();
+        service3.setName("Gym");
+        service3.setPrice(150.11);
+        serviceService.addService(service3);
+        System.out.println(serviceService.findMinPriceService());
+
+        System.out.println("================================ 3 ==========================================");
+        System.out.println(premisesService.findTotalCountVisitorsService());
+
+        System.out.println("================================ 4 ==========================================");
+        UserService userService = new UserService();
+        userService.findBetweenAgeService(1986, 2000).forEach(System.out::println);
+
+        System.out.println("================================ 5 ==========================================");
+        premisesService.findPremisesByAgeService(2025).forEach(System.out::println);
+
+
     }
 }

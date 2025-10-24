@@ -15,4 +15,5 @@ public class SignUpRepository {
         session.getTransaction().commit();
         session.close();
     }
+
 }
