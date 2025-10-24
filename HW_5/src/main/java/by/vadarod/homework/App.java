@@ -2,11 +2,11 @@ package by.vadarod.homework;
 
 
 import by.vadarod.homework.entity.*;
-import by.vadarod.homework.service.ClientService;
-import by.vadarod.homework.service.EmployeeService;
-import by.vadarod.homework.service.PremisesService;
-import by.vadarod.homework.service.ServiceService;
+import by.vadarod.homework.service.*;
 
+import java.math.BigDecimal;
+import java.time.LocalTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -288,6 +288,145 @@ public class App
         employee4.setAddress(new Address("Minsk", "Masherova", 12, "123456"));
         employeeService.addEmployeeService(employee4);
 
+        System.out.println("================================ HW 9 ==========================================");
+        System.out.println("================================ 1 ==========================================");
+        ServiceService serviceService = new ServiceService();
+        Service service1 = new Service();
+        service1.setName("Tennis");
+        service1.setPrice(123.12);
 
+        PremisesService premisesService = new PremisesService();
+        Premises premises1 = new Premises();
+        premises1.setName("Gym");
+        premises1.setIdNumber((short) 1);
+        premises1.setMaxPeople((short) 25);
+        premises1.setStatus(PremisesStatus.ACTIVE);
+        premises1.setPrice(135.56);
+        premisesService.addPremisesService(premises1);
+
+        Premises premises2 = new Premises();
+        premises2.setName("Gym");
+        premises2.setIdNumber((short) 2);
+        premises2.setMaxPeople((short) 29);
+        premises2.setStatus(PremisesStatus.REPAIR);
+        premises2.setPrice(135.56);
+        premisesService.addPremisesService(premises2);
+
+
+        Premises premises3 = new Premises();
+        premises3.setName("Aerobics room");
+        premises3.setIdNumber((short) 3);
+        premises3.setMaxPeople((short) 10);
+        premises3.setStatus(PremisesStatus.REPAIR);
+        premises3.setPrice(135.56);
+        premisesService.addPremisesService(premises3);
+
+
+        List<Premises> premisesList = new ArrayList<>();
+        premisesList.add(premises1);
+        premisesList.add(premises2);
+        premisesList.add(premises3);
+
+        service1.setPremisesList(premisesList);
+        serviceService.addService(service1);
+
+        System.out.println("================================ 2 ==========================================");
+
+        Client client5 = new Client();
+        client5.setYearOfBirth(1976);
+        client5.setName("Irina");
+        client5.setSurname("Pupkina");
+        client5.setAmount(1110.45);
+        client5.setPhone("+3711669999");
+        client5.setLastVisitDate(new Date());
+        client5.setStatus(Status.ACTIVE);
+        client5.setAddress(new Address("Vitebsk", "Nezavisimosti", 12, "123456"));
+
+        VisitService visitService = new VisitService();
+        List<Visit> visitList = new ArrayList<>();
+        Visit visit1 = new Visit();
+        visit1.setVisitDate(new Date());
+        visit1.setTotalSum(BigDecimal.valueOf(10000));
+        visitService.addVisit(visit1);
+        visitList.add(visit1);
+
+        Visit visit2 = new Visit();
+        visit2.setVisitDate(new Date());
+        visit2.setTotalSum(BigDecimal.valueOf(1500));
+        visitService.addVisit(visit2);
+        visitList.add(visit2);
+
+        Visit visit3 = new Visit();
+        visit3.setVisitDate(new Date());
+        visit3.setTotalSum(BigDecimal.valueOf(500.12));
+        visitService.addVisit(visit3);
+        visitList.add(visit3);
+
+        client5.setVisits(visitList);
+        clientService.addClientUserService(client5);
+
+        System.out.println("================================ 3 ==========================================");
+        SignUpService signUpService = new SignUpService();
+        Client client6 = new Client();
+        client6.setYearOfBirth(1989);
+        client6.setName("Elena");
+        client6.setSurname("Pupkina");
+        client6.setAmount(526.45);
+        client6.setPhone("+3711111199");
+        client6.setLastVisitDate(new Date());
+        client6.setStatus(Status.ACTIVE);
+        client6.setAddress(new Address("Brest", "Nezavisimosti", 12, "123456"));
+        clientService.addClientUserService(client6);
+
+        Premises premises4 = new Premises();
+        premises4.setName("Gym");
+        premises4.setIdNumber((short) 12);
+        premises4.setMaxPeople((short) 29);
+        premises4.setStatus(PremisesStatus.ACTIVE);
+        premises4.setPrice(200.56);
+        premisesService.addPremisesService(premises4);
+
+        SignUp signUp1 = new SignUp();
+        signUp1.setDataSigned(new Date());
+        signUp1.setTimeSigned(LocalTime.now());
+        signUp1.setUser(client6);
+        signUp1.setPremises(premises4);
+        signUpService.addSignUp(signUp1);
+
+        SignUp signUp2 = new SignUp();
+        signUp2.setDataSigned(new Date());
+        signUp2.setTimeSigned(LocalTime.now());
+        signUp2.setUser(client6);
+        signUp2.setPremises(premises4);
+        signUpService.addSignUp(signUp2);
+
+        SignUp signUp3 = new SignUp();
+        signUp3.setDataSigned(new Date());
+        signUp3.setTimeSigned(LocalTime.now());
+        signUp3.setUser(client6);
+        signUp3.setPremises(premises4);
+        signUpService.addSignUp(signUp3);
+
+        System.out.println("================================ 4 ==========================================");
+
+        premisesService.dellPremisesService(premises4);
+
+        System.out.println("================================ HW 10 ==========================================");
+        System.out.println("================================ 1 ==========================================");
+        List<Client> clientsIgor = clientService.findClientByNameService("Igor");
+        for (Client client : clientsIgor) {
+            System.out.println(client.getSurname());
+        }
+        System.out.println("================================ 2 ==========================================");
+        System.out.println(employeeService.findMaxSalary());
+
+        System.out.println("================================ 3 ==========================================");
+        System.out.println(employeeService.findMinSalary());
+
+        System.out.println("================================ 4 ==========================================");
+        System.out.println(employeeService.findSalaryPeriod(113));
+
+        System.out.println("================================ 5 ==========================================");
+        System.out.println(premisesService.findCostForClientService());
     }
 }

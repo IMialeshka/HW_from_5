@@ -4,9 +4,9 @@ import by.vadarod.homework.config.HibernateConnection;
 import by.vadarod.homework.config.HibernateJavaConfig;
 import by.vadarod.homework.entity.Client;
 import by.vadarod.homework.entity.ClientPremium;
-import by.vadarod.homework.entity.PremisesMore;
 import by.vadarod.homework.entity.Status;
 import jakarta.persistence.EntityManager;
+import jakarta.persistence.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
@@ -77,6 +77,16 @@ public class ClientRepository {
         session.getTransaction().commit();
         session.close();
 
+    }
+
+    public List<Client>  findClientByName(String name) {
+        SessionFactory sessionFactory = HibernateJavaConfig.getSessionFactory();
+        Session session = sessionFactory.openSession();
+        Query query = session.createQuery("select c from ClientsEntity c where c.name = :name");
+        query.setParameter("name", name);
+        List<Client> clients = query.getResultList();
+        session.close();
+        return clients;
     }
 
 }

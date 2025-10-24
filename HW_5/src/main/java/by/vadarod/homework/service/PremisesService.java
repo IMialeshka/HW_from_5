@@ -5,6 +5,7 @@ import by.vadarod.homework.entity.PremisesMore;
 import by.vadarod.homework.repository.PremisesRepository;
 
 import java.util.List;
+import java.util.Map;
 
 public class PremisesService {
     private PremisesRepository premisesRepository = new PremisesRepository();
@@ -25,6 +26,18 @@ public class PremisesService {
     public List<PremisesMore> getAllPremisesMoreService() {
         return premisesRepository.getAllPremisesMore();
     }
+
+    public void dellPremisesService(Premises premises)
+    {
+        premisesRepository.dellPremises(premises);
+    }
+
+    public Map<String, Double> findCostForClientService() {
+        PremisesRepository premisesRepository = new PremisesRepository();
+        return premisesRepository.findCostForClient();
+
+    }
+
 
 
 
