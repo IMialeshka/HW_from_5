@@ -2,6 +2,7 @@ package by.vadarod.homework.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,6 +13,8 @@ import java.util.List;
 @Getter
 @Setter
 @ToString
+@Cacheable
+@org.hibernate.annotations.Cache(usage = CacheConcurrencyStrategy.READ_WRITE, region = "service")
 public class Service {
     @Id
     @SequenceGenerator(name = "sequenceService", schema = "schema_hw", sequenceName = "sequence_service", allocationSize = 1)
@@ -22,7 +25,7 @@ public class Service {
 
     private double price;
 
-    @OneToMany(fetch = FetchType.EAGER)
+    @OneToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "service_id")
     private List<Premises> premisesList;
 
