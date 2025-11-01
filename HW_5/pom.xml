@@ -21,6 +21,36 @@
           <artifactId>hibernate-core</artifactId>
           <version>6.2.29.Final</version>
       </dependency>
+      <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-jcache -->
+      <dependency>
+          <groupId>org.hibernate.orm</groupId>
+          <artifactId>hibernate-jcache</artifactId>
+          <version>6.6.29.Final</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/javax.cache/cache-api -->
+      <dependency>
+          <groupId>javax.cache</groupId>
+          <artifactId>cache-api</artifactId>
+          <version>1.1.1</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->
+      <dependency>
+          <groupId>org.ehcache</groupId>
+          <artifactId>ehcache</artifactId>
+          <version>3.9.6</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/org.glassfish.jaxb/jaxb-runtime -->
+      <dependency>
+          <groupId>org.glassfish.jaxb</groupId>
+          <artifactId>jaxb-runtime</artifactId>
+          <version>2.3.3</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api -->
+      <dependency>
+          <groupId>javax.xml.bind</groupId>
+          <artifactId>jaxb-api</artifactId>
+          <version>2.3.1</version>
+      </dependency>
       <!-- https://mvnrepository.com/artifact/org.postgresql/postgresql -->
       <dependency>
           <groupId>org.postgresql</groupId>

@@ -195,7 +195,7 @@ public class App
         }*/
 
 
-        System.out.println("================================ HW 8 ==========================================");
+      /*  System.out.println("================================ HW 8 ==========================================");
         System.out.println("================================ 1, 2 ==========================================");
         ClientService clientService = new ClientService();
         Client client1 = new Client();
@@ -455,8 +455,29 @@ public class App
         userService.findBetweenAgeService(1986, 2000).forEach(System.out::println);
 
         System.out.println("================================ 5 ==========================================");
-        premisesService.findPremisesByAgeService(2025).forEach(System.out::println);
+        premisesService.findPremisesByAgeService(2025).forEach(System.out::println);*/
 
+        ServiceService serviceService = new ServiceService();
+        Service service1 = new Service();
+        service1.setName("Tennis");
+        service1.setPrice(123.12);
+        serviceService.addService(service1);
 
+        Service service2 = new Service();
+        service2.setName("Swimming");
+        service2.setPrice(145.12);
+        serviceService.addService(service2);
+
+        Service service3 = new Service();
+        service3.setName("Football");
+        service3.setPrice(145.33);
+        serviceService.addService(service3);
+        System.out.println("================================ HW 14 ==========================================");
+        System.out.println("================================ 1.1 ==========================================");
+        serviceService.checkCacheService(4);
+        System.out.println("================================ 1.2 ==========================================");
+        serviceService.checkCacheService(1);
+        System.out.println("================================ 2 ==========================================");
+        serviceService.checkCache2Level(1);
     }
 }
