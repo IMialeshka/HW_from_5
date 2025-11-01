@@ -44,10 +44,10 @@ public class ClientService {
         ClientRepository clientRepository = new ClientRepository();
         clientRepository.addClientUser(client);
     }
-
-
-
-
-
+    public List<Client> findClientByNameService(String name)
+    {
+        ClientRepository clientRepository = new ClientRepository();
+        return clientRepository.findClientByName(name);
+    }
 
 }
