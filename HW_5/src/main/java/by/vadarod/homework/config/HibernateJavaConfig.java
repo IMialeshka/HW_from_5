@@ -22,6 +22,12 @@ public class HibernateJavaConfig {
         props.put("hibernate.format_sql", "true");
         props.put("hibernate.dialect", "org.hibernate.dialect.PostgreSQLDialect");
         props.put("hibernate.connection.driver_class", "org.postgresql.Driver");
+        props.put("hibernate.cache.use_second_level_cache", "true");
+        props.put("hibernate.cache.use_query_cache", "true");
+        props.put("hibernate.cache.region.factory_class", "org.hibernate.cache.jcache.internal.JCacheRegionFactory");
+        props.put("hibernate.javax.cache.provider", "org.ehcache.jsr107.EhcacheCachingProvider");
+        props.put("hibernate.javax.cache.uri", "META-INF/config/ehcache.xml");
+        props.put(" hibernate.generate_statistics", "true");
         config = new Configuration();
         config.addAnnotatedClass(Client.class);
         config.addAnnotatedClass(Service.class);

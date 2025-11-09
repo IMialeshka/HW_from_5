@@ -21,4 +21,11 @@ public class ServiceService {
         return serviceRepository.findMinPriceService();
     }
 
+    public void checkCacheService(long id) {
+        serviceRepository.checkCache(id);
+    }
+
+    public void checkCache2Level(long id) {
+        serviceRepository.checkCache2Level(id);
+    }
 }
